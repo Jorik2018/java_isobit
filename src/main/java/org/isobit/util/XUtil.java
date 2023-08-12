@@ -28,6 +28,7 @@ import java.util.StringTokenizer;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import javax.swing.Action;
 import javax.swing.ActionMap;
@@ -820,4 +821,16 @@ public class XUtil {
         return result.toString();
     }
 
+    public static List<Object> toList(String s, Converter converter) {
+        return Arrays.stream(s.split(","))
+                .map(converter::convert)
+                .collect(Collectors.toList());
+    }
+
+    public interface Converter {
+
+        Object convert(String s);
+        
+    }
+    
 }

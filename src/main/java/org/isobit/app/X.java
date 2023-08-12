@@ -2,15 +2,10 @@ package org.isobit.app;
 
 import java.awt.Cursor;
 import java.awt.print.PrinterJob;
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.Reader;
@@ -33,7 +28,7 @@ import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 
 import org.isobit.app.X.JSON.Enviroment;
-import org.isobit.app.jpa.User;
+import org.isobit.app.model.User;
 import org.isobit.util.Constants;
 import org.isobit.util.RandomUtil;
 import org.isobit.util.XDate;
@@ -1335,4 +1330,9 @@ public class X
             return null;
         }
     }
+
+    public static HttpSession getSession() {
+        return enviroment.getSession(false);
+    }
+    
 }

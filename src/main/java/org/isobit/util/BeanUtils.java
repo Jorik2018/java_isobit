@@ -11,8 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.isobit.app.X;
-import org.isobit.app.jpa.User;
-//import org.isobit.data.JPA;
+import org.isobit.app.model.User;
 
 public class BeanUtils {
 
@@ -98,13 +97,13 @@ public class BeanUtils {
         fieldList.addAll(Arrays.asList(cls.getDeclaredFields()));
         fieldList.addAll(Arrays.asList(cls.getSuperclass().getDeclaredFields()));
         for (Field field : fieldList) {
-            if (field.getType().toString().endsWith("javax.persistence.EntityManager")) {
+            if (field.getType().toString().endsWith("jakarta.persistence.EntityManager")) {
                 try {
 //                    String.format("%02", args)
                     field.setAccessible(true);
                     for (Annotation an : field.getAnnotations()) {
                         //field.set(o, JPA.getInstance().getEntityManager(
-                          //      ((javax.persistence.PersistenceContext) an).unitName()
+                          //      ((jakarta.persistence.PersistenceContext) an).unitName()
                         //));
                     }
 

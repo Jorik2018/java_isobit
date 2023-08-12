@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.isobit.app.X;
-import org.isobit.app.jpa.User;
+import org.isobit.app.model.User;
 
 public abstract class XAction{
 
