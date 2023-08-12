@@ -24,7 +24,6 @@ dependencies {
     compileOnly 'javax.servlet:servlet-api:3.0-alpha-1'
     compileOnly 'javax.ejb:ejb-api:3.0'
     compileOnly 'org.projectlombok:lombok:1.18.20'
-
     testImplementation 'junit:junit:4.12'
 
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
