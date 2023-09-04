@@ -162,7 +162,7 @@ public abstract class AbstractFacade<T> implements AbstractFacadeLocal {
     @PersistenceContext(unitName = SYSTEM_UNIT_NAME)
     private EntityManager em;
 
-    public static final String SYSTEM_UNIT_NAME = "isobit";
+    public static final String SYSTEM_UNIT_NAME = "";
 
     protected EntityManager getEntityManager() {
         return em;
