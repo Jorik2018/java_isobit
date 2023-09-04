@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
-import javax.naming.InitialContext;
 import org.isobit.app.X;
 import org.isobit.app.X.PersistAction;
 //import org.primefaces.model.LazyDataModel;

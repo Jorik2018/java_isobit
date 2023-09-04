@@ -2,9 +2,10 @@ package org.isobit.app.service;
 
 import java.util.List;
 import java.util.Map;
-import javax.ejb.Local;
 
 import org.isobit.app.model.User;
+
+import jakarta.ejb.Local;
 
 @Local
 public interface ContactFacade {

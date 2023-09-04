@@ -3,11 +3,12 @@ package org.isobit.directory.service;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
-import javax.ejb.Local;
 
 import org.isobit.directory.model.DrtEstadoCivil;
 import org.isobit.directory.model.People;
 import org.isobit.util.AbstractFacadeLocal;
+
+import jakarta.ejb.Local;
 
 @Local
 public interface PeopleFacade{

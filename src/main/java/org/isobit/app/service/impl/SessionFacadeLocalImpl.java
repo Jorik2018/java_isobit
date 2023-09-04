@@ -1,7 +1,6 @@
 package org.isobit.app.service.impl;
 
 import java.io.Serializable;
-import javax.ejb.*;
 import javax.servlet.http.HttpSession;
 import org.isobit.app.X;
 import org.isobit.app.service.SessionFacade;

@@ -2,11 +2,12 @@ package org.isobit.directory.service;
 
 import java.util.List;
 import java.util.Map;
-import javax.ejb.Local;
 
 import org.isobit.directory.model.Company;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import jakarta.ejb.Local;
 
 @Local
 @Service

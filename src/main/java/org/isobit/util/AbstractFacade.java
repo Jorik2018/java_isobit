@@ -5,9 +5,10 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import javax.ejb.EJBException;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
+import jakarta.ejb.EJBException;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Id;

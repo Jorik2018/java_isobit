@@ -7,11 +7,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Basic;
-import jakarta.persistence.Transient;
 import lombok.*;
 
 @Data
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false,onlyExplicitlyIncluded = true)

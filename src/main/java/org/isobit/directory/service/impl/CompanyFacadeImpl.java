@@ -6,12 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
@@ -29,12 +26,9 @@ import org.isobit.directory.service.CompanyFacade;
 import org.isobit.directory.service.DirectoryFacade;
 import org.isobit.directory.service.PeopleFacade;
 import org.isobit.util.AbstractFacade;
-import org.isobit.util.BeanUtils;
-import org.isobit.util.XFile;
 import org.isobit.util.XMap;
 import org.isobit.util.XUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @ApplicationScoped
@@ -198,16 +192,16 @@ public class CompanyFacadeImpl implements CompanyFacade {
         return p;
     }
 
-    @EJB
+    @Inject
     @Autowired
     private DirectoryFacade directoryFacade;
 
-    @EJB
+    @Inject
     @Autowired
     //@Qualifier("peopleFacadeLocalImpl2")
     private PeopleFacade peopleFacade;
 
-    @EJB
+    @Inject
     @Autowired
     private SystemFacade systemFacade;
 

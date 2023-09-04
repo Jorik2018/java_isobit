@@ -13,7 +13,6 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 @Data
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false,onlyExplicitlyIncluded = true)

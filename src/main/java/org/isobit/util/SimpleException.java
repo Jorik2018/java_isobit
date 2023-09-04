@@ -1,6 +1,8 @@
 package org.isobit.util;
 
-@javax.ejb.ApplicationException(rollback = true)
+import jakarta.ejb.ApplicationException;
+
+@ApplicationException(rollback = true)
 public class SimpleException extends RuntimeException{
 
     boolean reported=false;

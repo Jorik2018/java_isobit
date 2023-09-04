@@ -1,17 +1,13 @@
 package org.isobit.directory.service.impl;
 
-import java.util.Map;
-import javax.ejb.EJB;
-
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import javax.servlet.http.HttpServletRequest;
 
 import org.isobit.app.service.UserService;
 import org.isobit.directory.model.Directory;
 import org.isobit.directory.service.DirectoryFacade;
-import org.isobit.util.XMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +18,7 @@ public class DirectoryFacadeImpl implements DirectoryFacade{
     @PersistenceContext
     private EntityManager em;
     
-    @EJB
+    @Inject
     @Autowired
     private UserService userFacade;
 

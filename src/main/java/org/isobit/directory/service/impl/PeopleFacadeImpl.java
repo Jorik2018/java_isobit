@@ -11,12 +11,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.Query;
@@ -137,13 +134,13 @@ public class PeopleFacadeImpl
         return l;
     }
 
-    @EJB
+    @Inject
     private DirectoryFacade drtDirectorioFacade;
 
-    @EJB
+    @Inject
     private SessionFacade sessionFacade;
 
-    @EJB
+    @Inject
     private SystemFacade systemFacade;
 
     @Override

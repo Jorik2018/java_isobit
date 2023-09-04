@@ -13,6 +13,8 @@ import java.util.Map;
 import org.isobit.app.X;
 import org.isobit.app.model.User;
 
+import jakarta.ejb.EJB;
+
 public class BeanUtils {
 
     public static abstract class FieldAdapter {
@@ -112,7 +114,7 @@ public class BeanUtils {
                 }
             } else {
                 for (Annotation an : field.getAnnotations()) {
-                    if (an instanceof javax.ejb.EJB) {
+                    if (an instanceof EJB) {
                         try {
                             Object no = beanContainer.get(field.getType());
                             if (no == null) {

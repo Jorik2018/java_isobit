@@ -8,8 +8,6 @@ import org.isobit.app.model.Role;
 import org.isobit.app.model.User;
 import org.isobit.directory.model.People;
 
-import jakarta.enterprise.context.ApplicationScoped;
-
 public interface UserService  {
 
     //public List<User> load(int first, int pageSize, String sortField, Map<String, Object> filters);

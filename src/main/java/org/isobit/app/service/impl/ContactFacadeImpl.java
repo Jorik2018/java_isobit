@@ -14,8 +14,6 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
 
 import org.isobit.app.service.ContactFacade;
 import org.isobit.app.service.SystemFacade;

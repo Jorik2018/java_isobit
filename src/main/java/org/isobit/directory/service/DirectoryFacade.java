@@ -1,8 +1,9 @@
 package org.isobit.directory.service;
 
-import javax.ejb.Local;
 
 import org.isobit.directory.model.Directory;
+
+import jakarta.ejb.Local;
 
 @Local
 public interface DirectoryFacade{

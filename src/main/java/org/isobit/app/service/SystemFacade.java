@@ -1,8 +1,10 @@
 package org.isobit.app.service;
 
 import java.util.Map;
+
+import jakarta.ejb.Local;
+
 import java.io.File;
-import javax.ejb.Local;
 
 @Local
 public interface SystemFacade{
