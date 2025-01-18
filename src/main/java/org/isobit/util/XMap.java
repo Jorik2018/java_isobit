@@ -60,9 +60,11 @@ public class XMap<K,V> extends HashMap<K,V>{
         }
         return p;
     }*/
+
     int n=0;
     public void add(V value) {
-        put((K)new Integer(n++),value);
+        throw new RuntimeException("add in xmap");
+        //put(n++,value);
     }
 
     public Map set(K k, V v) {

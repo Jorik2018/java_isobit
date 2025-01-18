@@ -49,6 +49,7 @@ public class UserServiceImpl
 
 
     @Inject
+    @Autowired
     JsonWebToken jwt;
 
     @Autowired

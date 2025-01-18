@@ -1,11 +1,13 @@
 package org.isobit.app;
 
+import com.google.gson.*;
 import java.awt.Cursor;
 import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.Reader;
@@ -28,7 +30,9 @@ import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 
 import org.isobit.app.X.JSON.Enviroment;
+import org.isobit.app.X.JSON.Login;
 import org.isobit.app.model.User;
+import org.isobit.data.proxy.Proxy;
 import org.isobit.util.Constants;
 import org.isobit.util.RandomUtil;
 import org.isobit.util.XDate;
@@ -45,6 +49,9 @@ public class X
     public static String COUNTRY_LOGO = "COUNTRY_LOGO";
     public static String PROJECTS_PATH = "projects";
     public static String TEMPLATE = "TEMPLATE";
+    public static final Integer NEW = Integer.valueOf(-100);;
+    public static Gson gson;
+    public static Login login;
 
     public static String getClientIpAddr(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
@@ -165,7 +172,7 @@ public class X
     public static Date getServerDate() {
         return new Date();
     }
-    
+
     static {
         /*
          * installed = false;
@@ -953,8 +960,9 @@ public class X
      * }
      */
     // @Override
-    public Object alert(Object m) {
-        return alert(X.INFO, "Mensajee del Servidor", m);
+    public static Object alert(Object m) {
+        System.out.println("enviroment.alert(m);");
+        return enviroment.alert(m);
     }
 
     public Object alert(Object type, String summary, Object m) {
@@ -1248,12 +1256,8 @@ public class X
         }
 
         public static interface Login {
-
-            // public boolean connect(Proxy var1, Map var2);
-
-        }
-
-
+            boolean connect(Proxy param1Proxy, Map param1Map);
+          }
 
         public static Map<String, Object> clean(Map<String, Object> filters) {
             HashMap map = new HashMap();
@@ -1334,5 +1338,22 @@ public class X
     public static HttpSession getSession() {
         return enviroment.getSession(false);
     }
-    
+
+    public static JsonElement getJSON(String name, Object... option) {
+        return getJSON(name, true);
+    }
+
+    public static JsonElement getJSON(File f, boolean create) {
+        try {
+            JsonElement el = (new JsonParser()).parse(new FileReader(f));
+            return (el instanceof com.google.gson.JsonNull) ? (create ? (JsonElement) new JsonObject() : null) : el;
+        } catch (IOException e) {
+            log(e);
+            return create ? (JsonElement) new JsonObject() : null;
+        }
+    }
+
+    public static JsonElement getJSON(String fileName, boolean create) {
+        return getJSON(XFile.getFile(fileName, create), create);
+    }
 }
