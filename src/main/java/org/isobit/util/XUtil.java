@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.Stack;
+import java.util.Objects;
 import java.util.StringTokenizer;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
@@ -119,15 +120,14 @@ public class XUtil {
         if (collection == null || collection.isEmpty()) {
             return "";
         }
-
         return collection.stream()
                 .filter(Objects::nonNull)
                 .map(Object::toString)
                 .collect(Collectors.joining(delimiter));
     }
 
-    public static Object implode(List list) {
-        return implode(list, ',');
+    public static String implode(Collection<?> collection) {
+        return implode(collection, ",");
     }
 
     public static Stack getAllSuperClass(Object el, Class maxSuperClazz) {

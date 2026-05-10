@@ -577,7 +577,7 @@ public class UserServiceImpl
             li.add(pn.getId());
         }
         );
-        if (lp.size() > 0 && (lu = em.createQuery("SELECT u FROM User u WHERE u.idDir IN (" + XUtil.implode(li, (Object) ",") + ")").getResultList()).size() > 0) {
+        if (lp.size() > 0 && (lu = em.createQuery("SELECT u FROM User u WHERE u.idDir IN (" + XUtil.implode(li, ",") + ")").getResultList()).size() > 0) {
             return (User) lu.get(0);
         }
         return null;
