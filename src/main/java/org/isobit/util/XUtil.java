@@ -115,19 +115,15 @@ public class XUtil {
         return builder.toString();
     }
 
-    public static String implode(List list, Object delimiter) {
-        if (list==null||list.isEmpty()) {
-            return null;
+    public static String implode(Collection<?> collection, String delimiter) {
+        if (collection == null || collection.isEmpty()) {
+            return "";
         }
-        Object first = list.remove(0);
-        StringBuilder builder = new StringBuilder(first != null ? first.toString() : "");
-        for (Object o : list) {
-            if (o != null) {
-                builder.append(delimiter).append(o);
-            }
-        }
-        list.add(0, first);
-        return builder.toString();
+
+        return collection.stream()
+                .filter(Objects::nonNull)
+                .map(Object::toString)
+                .collect(Collectors.joining(delimiter));
     }
 
     public static Object implode(List list) {
