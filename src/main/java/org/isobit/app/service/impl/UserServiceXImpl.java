@@ -30,15 +30,15 @@ public class UserServiceXImpl implements UserServiceX {
     }
 
     @Override
-    public boolean can(User u, String permission) {
+    public boolean can(User u, String... permission) {
         if (u == null || permission == null) {
             return false;
         }
-        return identity.hasRole(permission);
+        return identity.hasRole(permission[0]);
     }
 
     @Override
-    public boolean can(String permission) {
+    public boolean can(String... permission) {
         return can(getCurrentUser(), permission);
     }
 }
