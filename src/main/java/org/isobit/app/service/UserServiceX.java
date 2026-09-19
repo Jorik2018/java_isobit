@@ -14,8 +14,8 @@ public interface UserServiceX  {
 
     public User getCurrentUser();
 
-    public boolean can(User u, String permission);
+    public boolean can(User u, String... permission);
 
-    public boolean can(String permission);
+    public boolean can(String... permission);
 
 }
